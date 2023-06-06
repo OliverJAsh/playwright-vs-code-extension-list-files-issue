@@ -4,7 +4,11 @@ import { defineConfig, devices } from '@playwright/test';
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-// require('dotenv').config();
+require('dotenv').config();
+
+if (process.env.FOO === undefined) {
+  throw new Error('FOO is not defined');
+}
 
 /**
  * See https://playwright.dev/docs/test-configuration.
